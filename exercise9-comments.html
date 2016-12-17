@@ -1,0 +1,133 @@
+<!-- Exercise 9: Comments -->
+
+<!DOCTYPE HTML>
+<html>
+<body>
+<p><input type = "text" id="textbox1"></p>
+<p><input type = "text" id="textbox2"></p>
+<button onclick="login()">Login</button>
+<button onclick="compare()">Compare</button>
+<button onclick="showDirection()">Direction</button>
+<p id="result"></p>
+<script>
+//Functions to verify username and password, compare the length of the words in the two boxes, and return a direction based on an input.
+
+// Verifies that the username and password from the text boxes are
+// valid and logs in the user.
+function login() {
+    if (textbox1.value == "admin" && textbox2.value == "pass") {
+result.innerHTML = "Logged in";
+} else {
+result.innerHTML = "Incorrect username and password";
+}
+}
+
+// Compares the length of the values in the first box and the second box. 
+// Outputs a message with the result in the "result" paragraph.
+function compare() {
+    if (textbox1.value.length > textbox2.value.length) {
+        result.innerHTML = "First is longer";
+    }
+    else if (textbox1.value.length < textbox2.value.length) {
+        result.innerHTML = "Second is longer";
+    } else {
+        result.innerHTML = "They are the same length"
+    }
+}
+
+// Outputs a message saying which direction to head in based on the input of the first text box.
+function directionName(abbrev) {
+// Return the full name of North, South, East, or West, given
+// the abbreviations n, s, e, w.
+switch (abbrev) {
+ case "n":
+ return "North";
+ break;
+ case "s":
+ return "South";
+ break;
+ case "e":
+ return "East";
+ break;
+ case "w":
+ return "West";
+ break;
+ // Return "Somewhere" for any other text other than n, s, e, or w.
+ default:
+ return "Somewhere";
+ }
+}
+
+// Displays text saying which direction to head in.
+function showDirection() {
+    result.innerHTML = "Go " + directionName(textbox1.value);
+}
+
+</script>
+</body>
+</html>
+
+
+<!-- Answers -->
+<!DOCTYPE HTML>
+<html>
+<body>
+<p><input type = "text" id="textbox1"></p>
+<p><input type = "text" id="textbox2"></p>
+<button onclick="login()">Login</button>
+<button onclick="compare()">Compare</button>
+<button onclick="showDirection()">Direction</button>
+<p id="result"></p>
+<script>
+// Exercise 9: Comments
+// Verifies that the username and password from the text boxes are
+// valid and logs in the user.
+function login() {
+if (textbox1.value == "admin" && textbox2.value == "pass") {
+result.innerHTML = "Logged in";
+} else {
+result.innerHTML = "Incorrect username and password";
+}
+
+}
+// Compares the number of characters in textbox1 and textbox2
+// and puts a message into the result paragraph.
+function compare() {
+if (textbox1.value.length > textbox2.value.length) {
+ result.innerHTML = "First is longer";
+} else if (textbox1.value.length < textbox2.value.length) {
+ result.innerHTML = "Second is longer";
+} else {
+result.innerHTML = "Same length";
+}
+}
+// Returns the full direction name, given a one-character
+// abbreviation.
+function directionName(abbrev){
+ // Return the full name of North, South, East, or West, given
+ // the abbreviations n, s, e, w.
+ switch (abbrev) {
+ case "n":
+ return "North";
+ break;
+ case "s":
+ return "South";
+ break;
+ case "e":
+ return "East";
+ break;
+ case "w":
+ return "West";
+ break;
+ default:
+ return "Somewhere";
+ }
+}
+// Sets the result paragraph with "Go" plus a direction based
+// on the abbreviated direction in textbox1.
+function showDirection() {
+ result.innerHTML = "Go " + directionName(textbox1.value);
+}
+</script>
+</body>
+</html>

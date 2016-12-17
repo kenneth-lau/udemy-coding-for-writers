@@ -1,0 +1,48 @@
+<!-- My answer -->
+<!--
+<!DOCTYPE HTML>
+<html>
+<body>
+    <p>First name: <input type = "text" id="first"></p>
+    <p>Last name: <input type = "text" id="last"></p>
+    <button onclick="getName()">Click to Get Name</button>
+    <p id="fullName"></p>
+    <button onclick="getLastNameFirst()">Click to Get Name (last name first)</button>
+    <p id="lastNameFirst"></p>
+
+    <script>
+function getName() {
+ fullName.innerHTML =
+ "Full name: " + first.value + " " + last.value;
+}
+
+function getLastNameFirst() {
+    lastNameFirst.innerHTML =
+    "Full name (last name first): " + last.value + ", " + first.value; 
+}
+</script>
+</body>
+</html>
+-->
+
+<!-- Answer -->
+<!DOCTYPE HTML>
+<html>
+<body>
+<p>First name: <input type = "text" id="first"></p>
+<p>Last name: <input type = "text" id="last"></p>
+<button onclick="getName()">Get Name</button>
+<button onclick="showLastNameFirst()">Last Name First</button>
+<p id="fullName"></p>
+<script>
+function getName() {
+ fullName.innerHTML =
+ "Full name: " + first.value + " " + last.value;
+}
+function showLastNameFirst() {
+ fullName.innerHTML =
+ "Full name: " + last.value + ", " + first.value;
+}
+</script>
+</body>
+</html>
