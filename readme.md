@@ -1,5 +1,8 @@
 # Notes from the "Coding for Writers 1: Basic Programming" course on Udemy
-For more information on this course, see [Coding for Writers 1: Basic Programming](https://www.udemy.com/coding-for-writers-1-basic-programming)
+
+To see the notes on this repository's GitHub Pages site, go to https://kenneth-lau.github.io/udemy-coding-for-writers-1/.
+
+For more information on this course, see [Coding for Writers 1: Basic Programming](https://www.udemy.com/coding-for-writers-1-basic-programming).
 
 ## Final project: Therapist Bot
 - [Carl the Therapist Bot](https://kenneth-lau.github.io/udemy-coding-for-writers/)
