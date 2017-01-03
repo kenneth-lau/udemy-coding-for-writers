@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        p {
+            line-height: 50%;
+        }
+    </style>
+</head>
+
+<body onload="initialize()">
+    <h1>The Therapist Is In</h1>
+    <p>Enter your text here: <input id="textbox" size="150" /></p>
+    <p><button onclick="submitLine()">Submit</button></p>
+    <div id="conversation"></div>
+    <script>
+        // String to hold the therapy discussion
+        var therapySession;
+
+        // Constant which is an array of strings with generic responses
+        const genericResponses = [
+            "Uh-huh.",
+            "Go on.",
+            "That's very interesting.",
+            "Fascinating...",
+            "Intriguing...",
+            "I see...",
+            "Tell me more.",
+            "Wowzers...",
+            "Oh my...",
+            "Keep talking."
+        ];
+
+        // Constant which is an array of question responses
+        const questionResponses = [
+            "Why do you ask that?",
+            "What do <em>you</em> think?",
+            "That's an interesting question.",
+            "How long have you wanted to know that?",
+            "How long has this been going on?",
+            "Why do you think that?",
+            "What do you think that means?",
+            "That depends on <strong>who</strong> you ask."
+        ];
+
+        // Array of exclamation responses
+        const exclamationResponses = [
+            "Please calm down.",
+            "No need to get so excited.",
+            "You sound very passionate about that.",
+            "Oh my, you're really getting worked up.",
+            "Cool your horses.",
+            "Take a chill pill.",
+            "Take two deep breaths and go on."
+        ];
+
+        // Constant object containing the mapping between first and second person phrases
+        const povSwitches = {
+            "I": "you",
+            "i": "you",
+            "me": "you",
+            "myself": "yourself",
+            "am": "are",
+            "my": "your",
+            "My": "your",
+            "I'm": "you're",
+            "I'd": "you'd",
+            "I'll": "you'll",
+            "i'm": "you're",
+            "i'd": "you'd",
+            "i'll": "you'll"
+        }
+
+        // Constant array of question beginnings
+        const questionStarts = [
+            "Why do you say that",
+            "How is it that",
+            "Can you tell me more about how",
+            "Why is it that",
+            "Can you explain why you say that",
+            "What do you mean when you say that"
+        ];
+
+        // Called when the program is loaded
+        function initialize() {
+            therapySession =
+                "<p> I'm Carl, your friendly neighborhood therapist bot. I'm hear to listen to what you have to say. Go ahead and tell me about what's been troubling you. </p>";
+            conversation.innerHTML = therapySession;
+        }
+
+        // Called when the submit button is clicked
+        // Handles button click. Takes textbox value and adds it to the `therapySession` variable
+        function submitLine() {
+            var patientLine = textbox.value;
+            therapySession += "<p> <em>" + patientLine + "</em> </p>";
+
+            // Choose response based on the last character
+            // Therapist line variable. Returns random question response or exclamation response if the user input string ends with a question mark or an exclamation point. Returns a transformed question if the original statement includes a first person phrase from the "povSwitches" values. 
+            var therapistLine;
+            if (lastChar(patientLine) == "?") {
+                therapistLine = randomElement(questionResponses);
+            } else if (lastChar(patientLine) == "!") {
+                therapistLine = randomElement(exclamationResponses);
+            } else {
+                therapistLine = createQuestion(patientLine);
+            }
+            // Still no good response, so use a basic response.
+            if (therapistLine == null) {
+                therapistLine = randomElement(genericResponses);
+            }
+
+            therapySession += "<p>" + therapistLine + "</p>";
+
+            conversation.innerHTML = therapySession;
+        }
+
+        // Returns a random element in an array
+        // Function with a parameter that's an array and returns an element from that array. 
+        // Math.random returns a random number between 0 and 1. 
+        // Math.floor strips the decimal points off of a number and turns it into an integer.
+        function randomElement(myArray) {
+            var index = Math.floor(Math.random() * myArray.length);
+            return myArray[index];
+        }
+
+        // Returns the last character of a string
+        // Checks if the last character of the string is a question mark. 
+        // Substring is a method where if you pass in one parameter it returns the string from the index to the end of the string.
+        // Substring takes two parameters, start (required) and end (optional). See http://www.w3schools.com/jsref/jsref_substring.asp.
+        function lastChar(myString) {
+            return myString.substring(myString.length - 1);
+        }
+
+        // Transforms a statement from the patient line into a question. 
+        function createQuestion(patientLine) {
+            // Checks if "you" is in the string. Also catches instances of "your" and "yourself".
+            // The indexOf() method searches a string and finds the first time another string appears inside of it and returns the index of the starting point. 
+            if (patientLine.toLowerCase().indexOf("you") != -1) {
+                // Can't handle this one. Return null.
+                return null;
+            }
+            // Removes period at the end of the statement, if there is one.
+            if (lastChar(patientLine) == ".") {
+                patientLine = patientLine.substring(0, patientLine.length - 1);
+            }
+
+            // Adds a space at the beginning and end of the line
+            var modifiedLine = " " + patientLine + " ";
+
+            // Loops through all properties and replaces first person words with second person ones.
+            // Checks to see if any changes have been made. "True" if the modified line contains the modified property.
+            var found = false;
+            for (var property in povSwitches) {
+                if (povSwitches.hasOwnProperty(property)) {
+                    var modifiedProperty = " " + property + " ";
+                    var propRegEx = new RegExp(modifiedProperty, "g");
+                    if (modifiedLine.indexOf(modifiedProperty) != -1) {
+                        modifiedLine = modifiedLine.replace(propRegEx,
+                            " " + povSwitches[property] + " ");
+                        found = true;
+                    }
+                }
+            }
+
+            // Returns a question if a replacement was made. 
+            // Checks if the "found" variable is true. If true, removes a space at the end of the "modifiedLine" variable.
+            if (found) {
+                // Removes trailing space
+                modifiedLine = modifiedLine.substring(0, modifiedLine.length - 1);
+
+                // Creates full question and returns it
+                return randomElement(questionStarts) + " " + modifiedLine + "?";
+            }
+
+            // Returns null if no replacement is made
+            return null;
+        }
+    </script>
+</body>
+
+</html>
