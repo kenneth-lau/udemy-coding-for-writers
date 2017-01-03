@@ -1,5 +1,5 @@
 # Notes from the "Coding for Writers 1: Basic Programming" course on Udemy
-> [Coding for Writers 1: Basic Programming](https://www.udemy.com/coding-for-writers-1-basic-programming)
+For more information on this course, see [Coding for Writers 1: Basic Programming](https://www.udemy.com/coding-for-writers-1-basic-programming)
 
 ## Final project: Therapist Bot
 - [Carl the Therapist Bot](https://kenneth-lau.github.io/udemy-coding-for-writers/)
@@ -7,7 +7,7 @@
 
 ## Exercises
 - Exercise 2: [Strings](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise2-strings.html)
-- Exercise 3: [JavaScript](https://kenneth-lau.github.io/udemy-coding-for-writers/execise3-html-javascript.html)
+- Exercise 3: [JavaScript](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise3-html-javascript.html)
 - Exercise 4: [Constants](/exercise4-constants.md)
 - Exercise 5: [Operators](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise5-operators.html)
 - Exercise 6: [Functions](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise6-functions.html)
