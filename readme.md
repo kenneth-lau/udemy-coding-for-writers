@@ -1,25 +1,24 @@
 # Notes from the "Coding for Writers 1: Basic Programming" course on Udemy
 > [Coding for Writers 1: Basic Programming](https://www.udemy.com/coding-for-writers-1-basic-programming)
 
-
 ## Final project: Therapist Bot
-- [Carl the Therapist Bot](/index.html)
+- [Carl the Therapist Bot](https://kenneth-lau.github.io/udemy-coding-for-writers/)
 - [Documentation for "Carl the Therapist Bot"](exercise17-therapist-bot-doc.md)
 
-## Other exercises
-- Exercise 2: [Strings](/exercise2-strings.html)
-- Exercise 3: [JavaScript](/execise3-html-javascript.html)
+## Exercises
+- Exercise 2: [Strings](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise2-strings.html)
+- Exercise 3: [JavaScript](https://kenneth-lau.github.io/udemy-coding-for-writers/execise3-html-javascript.html)
 - Exercise 4: [Constants](/exercise4-constants.md)
-- Exercise 5: [Operators](/exercise5-operators.html)
-- Exercise 6: [Functions](/exercise6-functions.html)
+- Exercise 5: [Operators](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise5-operators.html)
+- Exercise 6: [Functions](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise6-functions.html)
 - Exercise 7: [Function documentation](/exercise7-function-doc.md)
-- Exercise 8: [Conditionals](exercise8-conditionals.html)
-- Exercise 9: [Comments](exercise9-comments.html)
-- Exercise 10: [Loops](exercise10-loops.html)
+- Exercise 8: [Conditionals](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise8-conditionals.html)
+- Exercise 9: [Comments](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise9-comments.html)
+- Exercise 10: [Loops](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise10-loops.html)
 - Exercise 11: [Function documentation 2](exercise11-function-doc.md)
-- Exercise 12: [Collections](exercise12-collections.html)
+- Exercise 12: [Collections](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise12-collections.html)
 - Exercise 13: [Enumerations](exercise13-enumerations-doc.md)
-- Exercise 14: [Libraries](exercise14-libraries.html)
+- Exercise 14: [Libraries](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise14-libraries.html)
 
 
 ## 1.1 Intro
