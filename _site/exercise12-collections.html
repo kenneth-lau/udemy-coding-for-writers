@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<body onload=" demoCollections()">
+    <div id="resultDiv"></div>
+    <script>
+        var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        var course = {
+            title: "English Literature",
+            teacher: "Tom Hardy",
+            numberStudents: 33,
+            department: "English",
+            credits: 5,
+            graduate: false
+        }
+
+        function demoCollections() {
+            var result = "";
+            result += "<p>" + "First day: " + daysOfWeek[0] + "</p>";
+            // Show last day of the week
+            result += "<p>" + "Last day: " + daysOfWeek[daysOfWeek.length - 1] + "</p>";
+
+            // List days of week in reverse order
+            /* My answer
+            for (var i = 6; i >= 0; i--) {
+            result += "<p>" + daysOfWeek[i] + "</p>";
+            }
+            */
+
+            // Actual answer
+            for (var i = daysOfWeek.length - 1; i >= 0; i--) {
+                result += "<p>" + daysOfWeek[i] + "</p>";
+            }
+
+            /* List days of week in order
+            for (var i = 0; i < daysOfWeek.length; i++) {
+            result += "<p>" + daysOfWeek[i] + "</p>";
+            }
+            */
+            //Shows value of the "teacher" property
+            result += "<p>" + "Teacher: " + course.teacher + "</p>";
+            // Shows full value of credits
+            result += "<p>" + "Total credits: " + course.numberStudents * course.credits + "</p>";
+
+            for (var prop in course) {
+                if (course.hasOwnProperty(prop)) {
+                    result += "<p>" + prop + ": " + course[prop] + "</p>";
+                }
+            }
+            resultDiv.innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
