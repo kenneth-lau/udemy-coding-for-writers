@@ -1,4 +1,26 @@
-# Udemy: Coding for Writers
+# Notes from the "Coding for Writers 1: Basic Programming" course on Udemy
+> [Coding for Writers 1: Basic Programming](https://www.udemy.com/coding-for-writers-1-basic-programming)
+
+
+## Final project: Therapist Bot
+- [Carl the Therapist Bot](/index.html)
+- [Documentation for "Carl the Therapist Bot"](exercise17-therapist-bot-doc.md)
+
+## Other exercises
+- Exercise 2: [Strings](/exercise2-strings.html)
+- Exercise 3: [JavaScript](/execise3-html-javascript.html)
+- Exercise 4: [Constants](/exercise4-constants.md)
+- Exercise 5: [Operators](/exercise5-operators.html)
+- Exercise 6: [Functions](/exercise6-functions.html)
+- Exercise 7: [Function documentation](/exercise7-function-doc.md)
+- Exercise 8: [Conditionals](exercise8-conditionals.html)
+- Exercise 9: [Comments](exercise9-comments.html)
+- Exercise 10: [Loops](exercise10-loops.html)
+- Exercise 11: [Function documentation 2](exercise11-function-doc.md)
+- Exercise 12: [Collections](exercise12-collections.html)
+- Exercise 13: [Enumerations](exercise13-enumerations-doc.md)
+- Exercise 14: [Libraries](exercise14-libraries.html)
+
 
 ## 1.1 Intro
 * Scripting languages
