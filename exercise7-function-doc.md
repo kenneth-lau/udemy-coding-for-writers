@@ -27,7 +27,7 @@ Number of friends the current user has
 ## `requestFriend(username)`
 Sends a friend request to a user.
 
-### Paramters:
+### Parameters:
 * `username`  
 Type: String  
 Username of the user to send request to
