@@ -8,7 +8,7 @@ For more information on this course, see [Coding for Writers 1: Basic Programmin
 ## Exercises
 - Exercise 2: [Strings](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise2-strings.html)
 - Exercise 3: [JavaScript](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise3-html-javascript.html)
-- Exercise 4: [Constants](/exercise4-constants.md)
+- Exercise 4: [Documenting constants](/exercise4-constants.md)
 - Exercise 5: [Operators](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise5-operators.html)
 - Exercise 6: [Functions](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise6-functions.html)
 - Exercise 7: [Function documentation](/exercise7-function-doc.md)
@@ -17,7 +17,7 @@ For more information on this course, see [Coding for Writers 1: Basic Programmin
 - Exercise 10: [Loops](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise10-loops.html)
 - Exercise 11: [Function documentation 2](exercise11-function-doc.md)
 - Exercise 12: [Collections](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise12-collections.html)
-- Exercise 13: [Enumerations](exercise13-enumerations-doc.md)
+- Exercise 13: [Documenting enumerations](exercise13-enumerations-doc.md)
 - Exercise 14: [Libraries](https://kenneth-lau.github.io/udemy-coding-for-writers/exercise14-libraries.html)
 
 
