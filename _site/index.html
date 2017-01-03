@@ -1,182 +1,1058 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name"></h1>
+      <h2 class="project-tagline"></h2>
+      
+      
+    </section>
 
-<head>
-    <style>
-        p {
-            line-height: 50%;
-        }
-    </style>
-</head>
+    <section class="main-content">
+      <h1 id="notes-from-the-coding-for-writers-1-basic-programming-course-on-udemy">Notes from the “Coding for Writers 1: Basic Programming” course on Udemy</h1>
+<p>For more information on this course, see <a href="https://www.udemy.com/coding-for-writers-1-basic-programming">Coding for Writers 1: Basic Programming</a></p>
 
-<body onload="initialize()">
-    <h1>The Therapist Is In</h1>
-    <p>Enter your text here: <input id="textbox" size="150" /></p>
-    <p><button onclick="submitLine()">Submit</button></p>
-    <div id="conversation"></div>
-    <script>
-        // String to hold the therapy discussion
-        var therapySession;
+<h2 id="final-project-therapist-bot">Final project: Therapist Bot</h2>
+<ul>
+  <li><a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise15-therapist.html">Carl the Therapist Bot</a></li>
+  <li><a href="exercise17-therapist-bot-doc.md">Documentation for “Carl the Therapist Bot”</a></li>
+</ul>
 
-        // Constant which is an array of strings with generic responses
-        const genericResponses = [
-            "Uh-huh.",
-            "Go on.",
-            "That's very interesting.",
-            "Fascinating...",
-            "Intriguing...",
-            "I see...",
-            "Tell me more.",
-            "Wowzers...",
-            "Oh my...",
-            "Keep talking."
-        ];
+<h2 id="exercises">Exercises</h2>
+<ul>
+  <li>Exercise 2: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise2-strings.html">Strings</a></li>
+  <li>Exercise 3: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise3-html-javascript.html">JavaScript</a></li>
+  <li>Exercise 4: <a href="/exercise4-constants.md">Documenting constants</a></li>
+  <li>Exercise 5: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise5-operators.html">Operators</a></li>
+  <li>Exercise 6: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise6-functions.html">Functions</a></li>
+  <li>Exercise 7: <a href="/exercise7-function-doc.md">Function documentation</a></li>
+  <li>Exercise 8: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise8-conditionals.html">Conditionals</a></li>
+  <li>Exercise 9: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise9-comments.html">Comments</a></li>
+  <li>Exercise 10: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise10-loops.html">Loops</a></li>
+  <li>Exercise 11: <a href="exercise11-function-doc.md">Function documentation 2</a></li>
+  <li>Exercise 12: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise12-collections.html">Collections</a></li>
+  <li>Exercise 13: <a href="exercise13-enumerations-doc.md">Documenting enumerations</a></li>
+  <li>Exercise 14: <a href="https://kenneth-lau.github.io/udemy-coding-for-writers/exercise14-libraries.html">Libraries</a></li>
+</ul>
 
-        // Constant which is an array of question responses
-        const questionResponses = [
-            "Why do you ask that?",
-            "What do <em>you</em> think?",
-            "That's an interesting question.",
-            "How long have you wanted to know that?",
-            "How long has this been going on?",
-            "Why do you think that?",
-            "What do you think that means?",
-            "That depends on <strong>who</strong> you ask."
-        ];
+<h2 id="intro">1.1 Intro</h2>
+<ul>
+  <li>Scripting languages
+    <ul>
+      <li>Programming languages</li>
+      <li>Scripting languages (JavaScript)</li>
+    </ul>
+  </li>
+  <li>API</li>
+  <li>SDK
+    <ul>
+      <li>API + docs + tools</li>
+    </ul>
+  </li>
+  <li>Web APIs</li>
+  <li>Platform APIs
+    <ul>
+      <li>someties called SDKs</li>
+    </ul>
+  </li>
+  <li>SDK
+    <ul>
+      <li>a collection of code</li>
+      <li>makes it easy to perform some functionality</li>
+      <li>usually one language and one platform (Android, iOS)</li>
+      <li>not obvious how to use</li>
+    </ul>
+  </li>
+  <li>JavaScript
+    <ul>
+      <li>scripting language</li>
+      <li>don’t need special software</li>
+    </ul>
+  </li>
+</ul>
 
-        // Array of exclamation responses
-        const exclamationResponses = [
-            "Please calm down.",
-            "No need to get so excited.",
-            "You sound very passionate about that.",
-            "Oh my, you're really getting worked up.",
-            "Cool your horses.",
-            "Take a chill pill.",
-            "Take two deep breaths and go on."
-        ];
+<h2 id="what-is-programming">1.2 What is programming?</h2>
+<ul>
+  <li>Organized into functions
+    <ul>
+      <li>functions can call other functions</li>
+      <li>functions can have data passed in and out</li>
+      <li>each function has a series of steps</li>
+    </ul>
+  </li>
+  <li>Most languages are case sensitve</li>
+  <li>In C-style languages, the end of an instruction is marked with a semicolon</li>
+  <li>Whitespace
+    <ul>
+      <li>means spaces, tabs, new lines</li>
+    </ul>
+  </li>
+  <li>SDKs
+    <ul>
+      <li>libraries, docs, tools</li>
+    </ul>
+  </li>
+  <li>Developer audience
+    <ul>
+      <li>do not read documentation from start to finish</li>
+      <li>scan for info that they need</li>
+    </ul>
+  </li>
+</ul>
 
-        // Constant object containing the mapping between first and second person phrases
-        const povSwitches = {
-            "I": "you",
-            "i": "you",
-            "me": "you",
-            "myself": "yourself",
-            "am": "are",
-            "my": "your",
-            "My": "your",
-            "I'm": "you're",
-            "I'd": "you'd",
-            "I'll": "you'll",
-            "i'm": "you're",
-            "i'd": "you'd",
-            "i'll": "you'll"
-        }
+<h2 id="data-types">2.4 Data types</h2>
+<ul>
+  <li>string
+    <ul>
+      <li>text - “hello”</li>
+      <li>double or single quotation marks</li>
+      <li>string concatenation
+        <ul>
+          <li>use + to join two strings</li>
+        </ul>
+      </li>
+      <li>special characters
+        <ul>
+          <li>\n for new line</li>
+          <li>\t for tab</li>
+          <li>\ to escape characters
+            <ul>
+              <li>" - escaping quotation marks</li>
+              <li>\ - escaping backslash</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>numbers
+    <ul>
+      <li>integers - whole numbers</li>
+      <li>decimal - not necessarily whole numbers</li>
+      <li>in JS - the data type is called number</li>
+      <li>some integers are written in hexadecimal
+        <ul>
+          <li>base 16</li>
+        </ul>
+      </li>
+      <li>very large or small numbers use exponent format</li>
+    </ul>
+  </li>
+  <li>boolean
+    <ul>
+      <li>true</li>
+      <li>false</li>
+    </ul>
+  </li>
+  <li>objects
+    <ul>
+      <li>contain other data</li>
+      <li>complex data types</li>
+      <li>UI elements: e.g. buttons, sliders</li>
+      <li>structured data</li>
+    </ul>
+  </li>
+  <li>null
+    <ul>
+      <li>most languages - complex objects can be set to null, simple objects (e.g., numbers, Booleans) cannot</li>
+      <li>JS - anything can be set to null</li>
+    </ul>
+  </li>
+</ul>
 
-        // Constant array of question beginnings
-        const questionStarts = [
-            "Why do you say that",
-            "How is it that",
-            "Can you tell me more about how",
-            "Why is it that",
-            "Can you explain why you say that",
-            "What do you mean when you say that"
-        ];
+<h2 id="html-and-javascript">2.6 HTML and JavaScript</h2>
+<ul>
+  <li>HTML
+    <ul>
+      <li>Tags</li>
+      <li>Attributes
+        <ul>
+          <li>attr=”value”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>JavaScript
+    <ul>
+      <li>contains the action to take</li>
+      <li>put code in a &lt;script&gt; tag</li>
+      <li>or in a separate file</li>
+      <li>HTML can reference functions through attributes</li>
+      <li>JS can reference HTML elements through their id attribute</li>
+      <li>functions
+        <ul>
+          <li>has parentheses after it</li>
+        </ul>
+      </li>
+      <li>object oriented programming
+        <ul>
+          <li>periods used to indicate something belongs to something else</li>
+          <li>what comes after the period (after a function) is a <em>property</em></li>
+        </ul>
+      </li>
+      <li>JavaScript console
+        <ul>
+          <li>in the browser</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-        // Called when the program is loaded
-        function initialize() {
-            therapySession =
-                "<p> I'm Carl, your friendly neighborhood therapist bot. I'm hear to listen to what you have to say. Go ahead and tell me about what's been troubling you. </p>";
-            conversation.innerHTML = therapySession;
-        }
+<h2 id="variables">2.8 Variables</h2>
+<ul>
+  <li>Variables
+    <ul>
+      <li>store information</li>
+      <li>name
+        <ul>
+          <li>numbers, letters, and underscores</li>
+          <li>no punctuation or spaces</li>
+          <li>case sensitive</li>
+          <li>should be meaningful</li>
+          <li>use camel case for multiple words</li>
+          <li>some people use underscores</li>
+        </ul>
+      </li>
+      <li>data type
+        <ul>
+          <li>Boolean</li>
+          <li>statically typed
+            <ul>
+              <li>C, C++, Java, C#</li>
+              <li>can only have one type</li>
+              <li>more work to program, but catches more mistakes</li>
+            </ul>
+          </li>
+          <li>dynamically typed
+            <ul>
+              <li>JavaScript, Perl, Python, Objective-C, Ruby</li>
+              <li>can be any type</li>
+              <li>easier to program</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>declaring variables
+        <ul>
+          <li>JS
+            <ul>
+              <li>use <code class="highlighter-rouge">var</code>
+                <ul>
+                  <li>var age;</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>value
+        <ul>
+          <li>assignment
+            <ul>
+              <li>assign with equals sign</li>
+              <li>username = “Peter”;</li>
+              <li>can declare and give initial value in one line
+                <ul>
+                  <li>var username = “Peter”;</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>constants
+        <ul>
+          <li>special type of variable that your program never changes</li>
+          <li>use <code class="highlighter-rouge">const</code> instead of <code class="highlighter-rouge">var</code></li>
+          <li>const companyName = “SDK Bridge”;</li>
+          <li>often all uppercase</li>
+          <li>common constants
+            <ul>
+              <li>codes, error messages, display information</li>
+            </ul>
+          </li>
+          <li>document with table: name, description, type, value</li>
+          <li>document with code</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-        // Called when the submit button is clicked
-        // Handles button click. Takes textbox value and adds it to the `therapySession` variable
-        function submitLine() {
-            var patientLine = textbox.value;
-            therapySession += "<p> <em>" + patientLine + "</em> </p>";
+<h2 id="operators">2.10 Operators</h2>
+<ul>
+  <li>Operators
+    <ul>
+      <li>Binary</li>
+      <li>Unary
+        <ul>
+          <li>- (multiplies value by -1)</li>
+        </ul>
+      </li>
+      <li>Number operators
+        <ul>
+          <li>+ (add)</li>
+          <li>- (subtract)</li>
+          <li>* (multiply)</li>
+          <li>/ (divide)</li>
+          <li>% (mod)
+            <ul>
+              <li>divides 2 numbers and takes the remainder</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Comparative operators
+        <ul>
+          <li>== (equal to)</li>
+          <li>!= (not equal to)</li>
+          <li>&gt; (greater than)</li>
+          <li>&lt; (less than)</li>
+          <li>&gt;= (greater than or equal to)</li>
+          <li>&lt;= (less than or equal to)</li>
+        </ul>
+      </li>
+      <li>Operation order
+        <ol>
+          <li>Parentheses first</li>
+          <li>Unary minus sign: -</li>
+          <li>Multiplication, division, and mod: * / %</li>
+          <li>Addition and subtraction: + -</li>
+          <li>Comparisons: &lt; &lt;= &gt; &gt;= == !=</li>
+        </ol>
+      </li>
+      <li>Assignment operator
+        <ul>
+          <li>equal sign used for assignment of variable</li>
+        </ul>
+      </li>
+      <li>Assignment shortcuts
+Shortcut | Description | Example | Meaning
+— | — | — | —
+++ | Add one | x++ |	x = x + 1
+– | Subtract one | x– |		x = x – 1
++= | Add something |	x += 3	|	x = x + 3
+-= | Subtract something |	x -= 3	|	x = x - 3
+*= | Multiply something |	x *= 3	|	x = x * 3
+/= | Divide something |	x /= 3	|	x = x / 3
+%= | Mod something |	x %= 3	|	x = x % 3</li>
+      <li>String operators
+        <ul>
+          <li>binary string operators
+            <ul>
+              <li>+ (concatenates two strings)</li>
+            </ul>
+          </li>
+          <li>comparison string operators
+            <ul>
+              <li>case sensitive</li>
+              <li>== (equal to)</li>
+              <li>!= (not equal to)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Boolean operators
+        <ul>
+          <li>binary Boolean operators
+            <ul>
+              <li>&amp;&amp; (and)</li>
+              <li>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td> </td>
+                      <td>(or)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+          </li>
+          <li>unary Boolean operators
+            <ul>
+              <li>! (not)
+                <ul>
+                  <li>!true == false</li>
+                  <li>!false == true</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-            // Choose response based on the last character
-            // Therapist line variable. Returns random question response or exclamation response if the user input string ends with a question mark or an exclamation point. Returns a transformed question if the original statement includes a first person phrase from the "povSwitches" values. 
-            var therapistLine;
-            if (lastChar(patientLine) == "?") {
-                therapistLine = randomElement(questionResponses);
-            } else if (lastChar(patientLine) == "!") {
-                therapistLine = randomElement(exclamationResponses);
-            } else {
-                therapistLine = createQuestion(patientLine);
-            }
-            // Still no good response, so use a basic response.
-            if (therapistLine == null) {
-                therapistLine = randomElement(genericResponses);
-            }
+<h2 id="functions">3.12 Functions</h2>
+<ul>
+  <li>Functions are groups of code
+    <ul>
+      <li>react to events</li>
+      <li>make code easier to understand</li>
+      <li>reuse code</li>
+    </ul>
+  </li>
+  <li>Data in and out
+    <ul>
+      <li>can pass data into functions
+        <ul>
+          <li>any number of values, separated by commas</li>
+          <li>go into the parentheses</li>
+          <li>called <em>parameters</em></li>
+        </ul>
+      </li>
+      <li>functions can optionally return one value
+        <ul>
+          <li>any type</li>
+          <li>called the <em>return value</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Creating a function
+    <ul>
+      <li>first line declares function name, parameters and (sometimes) what is returned</li>
+      <li>code is in curly brackets {}</li>
+      <li>use <strong>return</strong> keyword to return data</li>
+    </ul>
+  </li>
+  <li>Using a function
+    <ul>
+      <li>call the function and put the data to be passed inside the parentheses</li>
+    </ul>
+  </li>
+  <li>Parameters
+    <ul>
+      <li>act like local variables</li>
+    </ul>
+  </li>
+  <li>Dynamically typed vs statically typed
+    <ul>
+      <li>need to say type for statically typed languages</li>
+    </ul>
+  </li>
+  <li>Function names
+    <ul>
+      <li>same rules as variable names</li>
+      <li>should use camel case</li>
+      <li>can’t start with a number</li>
+      <li>typically a verb</li>
+    </ul>
+  </li>
+  <li>Return
+    <ul>
+      <li>you can have more than one return line in a function</li>
+    </ul>
+  </li>
+  <li>Local and global variables
+    <ul>
+      <li>Local
+        <ul>
+          <li>declared in a function</li>
+          <li>only exists in that function</li>
+        </ul>
+      </li>
+      <li>Global
+        <ul>
+          <li>declared outside the function (usually at the top)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-            therapySession += "<p>" + therapistLine + "</p>";
+<h2 id="documenting-functions">3.15 Documenting functions</h2>
+<ul>
+  <li>Big part of SDK documentation</li>
+  <li>OOP - usually called <em>methods</em></li>
+  <li>Summary
+    <ul>
+      <li>one-sentence description</li>
+      <li>If returns a value e.g. returns…</li>
+    </ul>
+  </li>
+  <li>Remarks
+    <ul>
+      <li>extra information
+        <ul>
+          <li>when you use the function</li>
+          <li>errors or problems that might occur</li>
+          <li>other related functions</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Paramters
+    <ul>
+      <li>name</li>
+      <li>data type</li>
+      <li>description</li>
+    </ul>
+  </li>
+  <li>Return value
+    <ul>
+      <li>data type</li>
+      <li>description</li>
+    </ul>
+  </li>
+</ul>
 
-            conversation.innerHTML = therapySession;
-        }
+<h2 id="conditionals">3.16 Conditionals</h2>
+<ul>
+  <li>If-then statements
+    <ul>
+      <li>If
+        <ul>
+          <li>syntax
+<code class="highlighter-rouge">
+if (expression) {
+  ...
+}
+</code></li>
+          <li>example
+<code class="highlighter-rouge">
+if (temperature &gt; 100) {
+display.innerHTML = "Warning! Too hot!";
+}
+</code></li>
+        </ul>
+      </li>
+      <li>else
+        <ul>
+          <li>example
+<code class="highlighter-rouge">
+if (temperature &gt; 100) {
+  display.innerHTML = "Warning! Too hot!";
+} else {
+  display.innerHTML = "Temperature fine";
+}
+</code></li>
+        </ul>
+      </li>
+      <li>Else if
+        <ul>
+          <li>example
+<code class="highlighter-rouge">
+if (temperature &gt; 100) {
+  display.innerHTML = "Warning! Too hot!";
+} else if (temperature &lt; 0) {
+  display.innerHTML = "Warning! Too cold!";
+} else {
+  display.innerHTML = "Temperature fine";
+}
+</code></li>
+        </ul>
+      </li>
+      <li>nested ifs
+        <ul>
+          <li>example
+<code class="highlighter-rouge">
+if (fluid == "water") {
+if (temperature &gt; 100) {
+  display.innerHTML = "Warning! Too hot!";
+} else {
+  display.innerHTML = "Water is fine";
+}
+}
+</code></li>
+        </ul>
+      </li>
+      <li>switch
+        <ul>
+          <li>shortcut for a series of if/else if statements</li>
+          <li>example
+<code class="highlighter-rouge">
+switch(expression) {
+    case value1:
+        code block
+        break;
+    case value2:
+        code block
+        break;
+    default:
+        default code block
+}
+</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-        // Returns a random element in an array
-        // Function with a parameter that's an array and returns an element from that array. 
-        // Math.random returns a random number between 0 and 1. 
-        // Math.floor strips the decimal points off of a number and turns it into an integer.
-        function randomElement(myArray) {
-            var index = Math.floor(Math.random() * myArray.length);
-            return myArray[index];
-        }
+<h2 id="making-your-code-readable">3.18 Making your code readable</h2>
+<ul>
+  <li>Comments
+    <ul>
+      <li>C-style languages use /* … */</li>
+      <li>More common is: //</li>
+      <li>Non C-style use #</li>
+      <li>complete sentences</li>
+      <li>beginning of each file</li>
+      <li>beginning of each function</li>
+      <li>inside a function, before any section with complexity</li>
+      <li>occasionally at the end of a line</li>
+      <li>comments above functions should be similar to the summary line of their documentation</li>
+    </ul>
+  </li>
+  <li>Names
+    <ul>
+      <li>use clear English</li>
+      <li>camel case for multiple words</li>
+      <li>don’t use
+        <ul>
+          <li>meaningless names (e.g., foo)</li>
+          <li>one letter variable names</li>
+          <li>obscure abbreviations</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Formatting
+    <ul>
+      <li>curly braces</li>
+      <li>indenting of code inside curly braces</li>
+      <li>spacing around operators and commas</li>
+    </ul>
+  </li>
+  <li>indenting
+    <ul>
+      <li>C-style
+        <ul>
+          <li>open curly brace at the end of the line</li>
+          <li>indent in (4 spaces)</li>
+          <li>closing curly brace matches indentation of line with open curly brace</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>spacing
+    <ul>
+      <li>space on either side of binary operators
+        <ul>
+          <li>but only to the left of unary operators</li>
+        </ul>
+      </li>
+      <li>no space before a comma, but one space after</li>
+    </ul>
+  </li>
+</ul>
 
-        // Returns the last character of a string
-        // Checks if the last character of the string is a question mark. 
-        // Substring is a method where if you pass in one parameter it returns the string from the index to the end of the string.
-        // Substring takes two parameters, start (required) and end (optional). See http://www.w3schools.com/jsref/jsref_substring.asp.
-        function lastChar(myString) {
-            return myString.substring(myString.length - 1);
-        }
+<h2 id="loops">3.20 Loops</h2>
+<ul>
+  <li>while loop
+    <ul>
+      <li>syntax
+<code class="highlighter-rouge">
+while (condition) {
+    code block to be executed
+}
+</code></li>
+      <li>example
+<code class="highlighter-rouge">
+var person= "child";
+while (person != "grandparent") {
+    if (person == "child" {
+      person = "parent";
+  } else if (person == "parent")
+      person = "grandparent";
+  }
+  ...   
+}
+</code></li>
+    </ul>
+  </li>
+  <li>for loop
+    <ul>
+      <li>repeats a block of code while a variable changes</li>
+      <li>example of meaning “for every box, add a label”</li>
+      <li>convention to use variables “i, j, k”</li>
+      <li>syntax
+<code class="highlighter-rouge">
+for (i = 0; i &lt; totalNumber; i++) {
+</code></li>
+      <li>example:
+<code class="highlighter-rouge">
+var numberString = "";
+var i;
+for (i = 0; i &lt; 4; i++) {
+numberString += i + " ";
+}
+</code></li>
+    </ul>
+  </li>
+  <li>Loops are used a lot with “containers” of data</li>
+</ul>
 
-        // Transforms a statement from the patient line into a question. 
-        function createQuestion(patientLine) {
-            // Checks if "you" is in the string. Also catches instances of "your" and "yourself".
-            // The indexOf() method searches a string and finds the first time another string appears inside of it and returns the index of the starting point. 
-            if (patientLine.toLowerCase().indexOf("you") != -1) {
-                // Can't handle this one. Return null.
-                return null;
-            }
-            // Removes period at the end of the statement, if there is one.
-            if (lastChar(patientLine) == ".") {
-                patientLine = patientLine.substring(0, patientLine.length - 1);
-            }
+<h2 id="advanced-function-documentation">4.2 Advanced function documentation</h2>
+<ul>
+  <li>Booleans
+    <ul>
+      <li>Parameters
+        <ul>
+          <li>Example “Whether to turn off the light”</li>
+        </ul>
+      </li>
+      <li>Return value
+        <ul>
+          <li>Example: “true if the operation was successful; false if it failed</li>
+          <li>“otherwise, false”</li>
+        </ul>
+      </li>
+      <li>If main purpose is to return a Boolean value
+        <ul>
+          <li>Example: “Returns whether the database is empty”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Units
+    <ul>
+      <li>very important</li>
+      <li>Examples:
+        <ul>
+          <li>kilobytes, seconds, km, miles, pixels</li>
+          <li>“in seconds”</li>
+          <li>Example: “Time before timeout, in seconds”</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Use of “specified”
+    <ul>
+      <li>Example: “Changes the password for the specified user”, “Deletes the specified photo”</li>
+    </ul>
+  </li>
+  <li>Callback
+    <ul>
+      <li>when a parameter is a function</li>
+      <li>“Called when…”</li>
+    </ul>
+  </li>
+  <li>Links and fonts
+    <ul>
+      <li>function name should be links</li>
+      <li>can use bold/monospace for functions, constants, etc</li>
+      <li>can use monospace for programming language keywords</li>
+      <li>Example: “Function makes a call to a server. Callback function is called when the server response is received”</li>
+      <li>Use “Called when… “</li>
+    </ul>
+  </li>
+  <li>“See Also” section</li>
+  <li>Sample code
+    <ul>
+      <li>illustrates how the function is called</li>
+      <li>should be meaningful</li>
+    </ul>
+  </li>
+</ul>
 
-            // Adds a space at the beginning and end of the line
-            var modifiedLine = " " + patientLine + " ";
+<h2 id="object-oriented-programming">4.24 Object oriented programming</h2>
+<ul>
+  <li>OOP is a way of organizing code
+    <ul>
+      <li>groups data and functions together</li>
+    </ul>
+  </li>
+  <li>Classes
+    <ul>
+      <li>data type</li>
+      <li>contains:
+        <ul>
+          <li>fields and/or properties (variables)</li>
+          <li>methods (functions)</li>
+        </ul>
+      </li>
+      <li>methods and properties are called “members”</li>
+      <li>data type</li>
+      <li>instantiate an “object” of that class type</li>
+      <li>call methods on an object</li>
+      <li>example<br />
+<code class="highlighter-rouge">var firstName = "Peter";</code><br />
+<code class="highlighter-rouge">firstName.toUpper();</code></li>
+    </ul>
+  </li>
+  <li>Fields</li>
+  <li>Properties
+    <ul>
+      <li>for getting and setting data</li>
+      <li>In JS, properties are like variables</li>
+      <li>use the period after an object to access a property</li>
+      <li>can use a second period to string together methods and properties</li>
+      <li>example:
+        <ul>
+          <li>Set a property: <code class="highlighter-rouge">textbox.size = 20;</code></li>
+          <li>Get a property: <code class="highlighter-rouge">var maxCharacters = textbox.size;</code></li>
+          <li><code class="highlighter-rouge">page.textbox.size</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Methods
+    <ul>
+      <li>functions for classes</li>
+      <li>use period like a property</li>
+      <li>example:
+        <ul>
+          <li><code class="highlighter-rouge">var sentence = "life is bad";</code><br />
+<code class="highlighter-rouge">var newSentence = sentence.replace("bad", "good");</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Class methods and properties
+    <ul>
+      <li>sometimes called “static” method or property</li>
+      <li>put a dot after the class name</li>
+      <li>don’t require instantiating an object</li>
+      <li>example: <code class="highlighter-rouge">Math.random();</code></li>
+    </ul>
+  </li>
+  <li>Documenting Classes
+    <ul>
+      <li>vast majority of SDK are object oriented</li>
+      <li>Classes
+        <ul>
+          <li>one sentence description</li>
+          <li>example: “Represents an employee”</li>
+        </ul>
+      </li>
+      <li>Properties
+        <ul>
+          <li>document like for constants</li>
+        </ul>
+      </li>
+      <li>Methods
+        <ul>
+          <li>document like for functions</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-            // Loops through all properties and replaces first person words with second person ones.
-            // Checks to see if any changes have been made. "True" if the modified line contains the modified property.
-            var found = false;
-            for (var property in povSwitches) {
-                if (povSwitches.hasOwnProperty(property)) {
-                    var modifiedProperty = " " + property + " ";
-                    var propRegEx = new RegExp(modifiedProperty, "g");
-                    if (modifiedLine.indexOf(modifiedProperty) != -1) {
-                        modifiedLine = modifiedLine.replace(propRegEx,
-                            " " + povSwitches[property] + " ");
-                        found = true;
-                    }
-                }
-            }
+<h2 id="programming-languages">4.25 Programming languages</h2>
+<ul>
+  <li>Programming languages
+    <ul>
+      <li>machine code (assembly language)</li>
+    </ul>
+  </li>
+</ul>
 
-            // Returns a question if a replacement was made. 
-            // Checks if the "found" variable is true. If true, removes a space at the end of the "modifiedLine" variable.
-            if (found) {
-                // Removes trailing space
-                modifiedLine = modifiedLine.substring(0, modifiedLine.length - 1);
+<h2 id="collections">5.26 Collections</h2>
+<ul>
+  <li>Arrays
+    <ul>
+      <li>a size (how many in the list)</li>
+      <li>an order (which comes first)</li>
+      <li>JS: represented by square brackets, elements separated by commas</li>
+      <li>example
+        <ul>
+          <li>numbers: <code class="highlighter-rouge">[5, 2, 60, -7, 1, 6.5, 0]</code></li>
+          <li>strings: <code class="highlighter-rouge">var beatles = ["John", "Paul", "George", "Ringo"];</code></li>
+        </ul>
+      </li>
+      <li>accessing array values
+        <ul>
+          <li>index value starts at 0 and goes to array length minus one</li>
+          <li>access value by putting index in square brackets
+            <ul>
+              <li>example: <br />
+<code class="highlighter-rouge">
+var beatles = ["John", "Paul", "George", "Ringo"];
+alert(beatles[2]);`
+</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>looping through arrays
+        <ul>
+          <li>example:
+<code class="highlighter-rouge">
+var beatles = ["John", "Paul", "George", "Ringo"];
+var credits = "";
+for (int i=0; i &lt; beatles.length; i++) {
+  credits += beatles[i] + " ";
+}
+</code></li>
+        </ul>
+      </li>
+      <li>array methods
+        <ul>
+          <li>JS
+            <ul>
+              <li>length</li>
+              <li>concat</li>
+              <li>indexOf</li>
+              <li>push</li>
+              <li>reverse</li>
+              <li>sort</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Dictionaries = Objects in JS
+    <ul>
+      <li>also called “hashtable”</li>
+      <li>collection of data keys and values</li>
+      <li>called objects in Javascript
+        <ul>
+          <li>dictionary keys are object “properties”</li>
+          <li>same name as the instantiation of classes</li>
+          <li>enclosed in curly brackets</li>
+          <li>keys and values are separated by colons</li>
+          <li>pairs separated by commas</li>
+          <li>and data type
+            <ul>
+              <li>keys are almost always strings</li>
+            </ul>
+          </li>
+          <li>example of an object:<br />
+<code class="highlighter-rouge"><span class="p">{</span><span class="nt">"red"</span><span class="p">:</span><span class="mi">205</span><span class="p">,</span><span class="w"> </span><span class="nt">"green"</span><span class="p">:</span><span class="mi">123</span><span class="p">,</span><span class="w"> </span><span class="nt">"blue"</span><span class="p">:</span><span class="mi">53</span><span class="p">}</span></code></li>
+          <li>example of declaring an object
+<code class="highlighter-rouge">
+var employee = {
+name: "Peter Gruenbaum", 
+company: "SDK Bridge, 
+title: "President"};
+</code></li>
+          <li>example of accessing the object element<br />
+<code class="highlighter-rouge">var title= employee["title"];</code></li>
+          <li>if key is a string, you can access it like a property<br />
+<code class="highlighter-rouge">var title= employee.title;</code></li>
+          <li>object values can be mixed data types</li>
+          <li>looping through object properties
+            <ul>
+              <li>example
+<code class="highlighter-rouge">
+for (var key in employee) {
+  if (employee.hasOwnProperty(key)) {
+      ...
+  }
+}
+</code></li>
+            </ul>
+          </li>
+          <li>nesting</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-                // Creates full question and returns it
-                return randomElement(questionStarts) + " " + modifiedLine + "?";
-            }
+<h2 id="enumerations">5.28 Enumerations</h2>
+<ul>
+  <li>special data type
+    <ul>
+      <li>can only have certain values</li>
+    </ul>
+  </li>
+  <li>use with <code class="highlighter-rouge">EnumName.EnumValue</code></li>
+  <li>Java enumerations
+    <ul>
+      <li>example<br />
+<code class="highlighter-rouge">
+enum TrafficLight { RED, YELLOW, GREEN };
+</code></li>
+      <li>example usage<br />
+<code class="highlighter-rouge">
+if (currentLigtht == TrafficLight.RED) {
+</code></li>
+      <li>convention of being in all caps</li>
+    </ul>
+  </li>
+  <li>JavaScript
+    <ul>
+      <li>does not have enums</li>
+      <li>can create something similar with a constant object</li>
+      <li>example
+<code class="highlighter-rouge">
+const TrafficLight = {
+RED: 0,
+YELLOW: 1,
+GREEN: 2
+};
+</code></li>
+    </ul>
+  </li>
+  <li>enumerations for switch statements</li>
+  <li>Documenting an enums
+    <ul>
+      <li>name and description of values and (numerical value)</li>
+      <li>example</li>
+    </ul>
+  </li>
+</ul>
 
-            // Returns null if no replacement is made
-            return null;
-        }
-    </script>
-</body>
+<h2 id="libraries">5.30 Libraries</h2>
+<ul>
+  <li>self-contained set of code that provides certain functionality</li>
+  <li>import the library into your code to use</li>
+  <li>in JavaScript, called “modules”</li>
+  <li>documentation
+    <ul>
+      <li>classes, methods, properties, constants, enumerations</li>
+      <li>overview material</li>
+    </ul>
+  </li>
+  <li>Using a JavaScript module
+    <ul>
+      <li><code class="highlighter-rouge">&lt;script&gt;</code> tag
+        <ul>
+          <li><code class="highlighter-rouge">type</code> attribute set to <code class="highlighter-rouge">application/javascript</code></li>
+          <li><code class="highlighter-rouge">src</code> attribute with the module file name</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Import
+    <ul>
+      <li><code class="highlighter-rouge">import</code> keyword</li>
+      <li>lets you add a name to all functions and variables in the module (called a “namespace”)</li>
+    </ul>
+  </li>
+  <li>library location
+    <ul>
+      <li>usually download the library and have on server</li>
+      <li>sometimes imported from another location on the Web</li>
+    </ul>
+  </li>
+</ul>
 
+<h2 id="automated-doc-generation">5.32 Automated doc generation</h2>
+<ul>
+  <li>helps keep doc in sync</li>
+  <li>doc text is included as special comments</li>
+  <li>JSDoc
+    <ul>
+      <li>special comment characters</li>
+      <li>keywords preceded by @</li>
+      <li>types are in curly brackets</li>
+    </ul>
+  </li>
+</ul>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+    
+  </body>
 </html>
